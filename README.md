@@ -1,6 +1,8 @@
 # 🚀 ApplyWise - AI-Powered Scholarship Application Analyzer
 
-> 🏆 This repository is my official submission for the [**Tips Hindawi**](https://tipshindawi.com/) **Challenge (June–July) 2026**.
+[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-Run_Locally-success?style=for-the-badge)](#-live-demo)
+
+> 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
 
 ## 👤 Participant
 
@@ -39,7 +41,86 @@ The application addresses a critical need in the education sector by providing i
 
 ---
 
-# 🛠️ Technologies Used
+# � Live Demo
+
+**ApplyWise is designed to run locally for the best experience.** To try the application:
+
+### Quick Start (Recommended)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/nadaam0hamed/ApplyWise.git
+   cd ApplyWise
+   ```
+
+2. **Install frontend dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+3. **Set up environment variables:**
+   Create `.env.local` file in the root directory:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=https://nrbwgqxilnivkakmktra.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_1wGfBcZSp62s9ySD6XEoTw_721v3QT6
+   HF_TOKEN=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
+   NEXT_PUBLIC_FASTAPI_URL=http://localhost:8000
+   ```
+
+4. **Start the application:**
+   ```bash
+   pnpm dev
+   ```
+
+5. **Open in browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Backend Setup (Required for Analysis)
+
+For full analysis functionality, you'll need to run the backend:
+
+1. **Navigate to backend:**
+   ```bash
+   cd backend
+   ```
+
+2. **Create virtual environment:**
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate  # Windows
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Create `.env` file:**
+   ```env
+   SUPABASE_URL=https://nrbwgqxilnivkakmktra.supabase.co
+   SUPABASE_ANON_KEY=sb_publishable_1wGfBcZSp62s9ySD6XEoTw_721v3QT6
+   HF_TOKEN=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
+   ```
+
+5. **Start backend server:**
+   ```bash
+   python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+   ```
+
+### 🎯 What You Can Try
+
+- **Browse the landing page** to learn about the system
+- **Sign up/Login** to access the dashboard
+- **Create a scholarship application** and upload documents
+- **Run AI-powered analysis** (requires backend running)
+- **Chat with the AI assistant** about your application
+- **View detailed reports** with eligibility assessments
+
+> 💡 **Note:** The application is designed to run locally for security and performance reasons. The demo mode allows you to explore the interface, while full analysis functionality requires the backend server.
+
+---
+
+# �🛠️ Technologies Used
 
 ## Frontend
 - **Next.js 16.2.6** - React framework with App Router
@@ -101,6 +182,7 @@ pnpm install
 3. Configure environment variables:
 Create `.env.local` file:
 ```env
+
 NEXT_PUBLIC_SUPABASE_URL=https://nrbwgqxilnivkakmktra.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_1wGfBcZSp62s9ySD6XEoTw_721v3QT6
 HF_TOKEN=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
@@ -137,19 +219,19 @@ pip install -r requirements.txt
 4. Configure environment variables:
 Create `.env` file in the backend directory:
 ```env
-SUPABASE_URL=https://nrbwgqxilnivkakmktra.supabase.co
-SUPABASE_ANON_KEY=sb_publishable_1wGfBcZSp62s9ySD6XEoTw_721v3QT6
-HF_TOKEN=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
-
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
+HF_TOKEN=your_huggingface_token
 ```
 
 5. Run the backend server:
 ```bash
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8001
-http://127.0.0.1:8001/health
+
 ```
 
 The backend API will be available at `http://localhost:8000`
+http://127.0.0.1:8001/health
 
 ---
 
@@ -255,11 +337,11 @@ Real-time chat interface for asking questions about the application.
 
 # 📚 About the Challenge
 
-This project was developed as part of the [**Tips Hindawi**](https://tipshindawi.com/) **Challenge (June–July) 2026**.
+This project was developed as part of the [**Tips Hindawi**](https://www.tipshindawi.com) **Challenge (June–July) 2026**.
 
-[Tips Hindawi](https://www.tipshindawi.com/) is the internships department of [**Edrak for Ai**](https://edrak4ai.com/en), and the challenge encourages participants to build real-world projects, apply practical skills, and showcase their work through GitHub.
+[Tips Hindawi](https://www.tipshindawi.com) is the internships department of [**Edrak for Ai**](https://edrak4ai.com/en), and the challenge encourages participants to build real-world projects, apply practical skills, and showcase their work through GitHub.
 
-For more information about the challenge, training programs, and upcoming batches, visit the official [Tips Hindawi](https://tipshindawi.com/) website.
+For more information about the challenge, training programs, and upcoming batches, visit the official [Tips Hindawi](https://www.tipshindawi.com) website.
 
 ---
 
