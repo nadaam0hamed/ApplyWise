@@ -1,0 +1,27 @@
+model name = "microsoft/Phi-3-mini-4k-instruct"
+
+frontend: Next.js , React , Type script
+backend: Fast API , python
+database : subabase
+ 
+features and used:
+
+1)multi-Agent workflow:6 agents
+
+1-document extraction
+2-requirement retrieval
+3-requirement matching
+4-professional document evaluation
+5-report generation
+6-timeline
+
+2) by lang Graph and state sharing between agents
+3) vector database(Chroma DB)
+4) structurd output
+5) Hybird RAG (static and dynamic KB)
+6) hugging face
+7) semantic search 
+8) Rule-base matching 
+9) sentence transformers
+
+

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# ChromaDB
+chroma_data/
+
+# Uploaded application documents (keep directory structure)
+knowledge/dynamic/**/*
+!knowledge/dynamic/.gitkeep

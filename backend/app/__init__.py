@@ -1,0 +1,1 @@
+"""ApplyWise FastAPI backend application."""
