@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-Run_Locally-success?style=for-the-badge)](#-live-demo)
 
-> 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
+> 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com) **Challenge (June–July) 2026**.
 
 ## 👤 Participant
 
