@@ -1,6 +1,6 @@
 # 🚀 ApplyWise - AI-Powered Scholarship Application Analyzer
 
-> 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
+> 🏆 This repository is my official submission for the [**Tips Hindawi**](https://tipshindawi.com/) **Challenge (June–July) 2026**.
 
 ## 👤 Participant
 
@@ -8,7 +8,7 @@
 | ---------------- | ------------------------------------ |
 | Full Name        | Nada Mohamed Mohamed El Sayed        |
 | Project Name     | ApplyWise                             |
-| GitHub Username  |                                      |
+| GitHub Username  | nadaam0hamed                                     |
 | Challenge Batch  | June–July 2026                       |
 | Training Program | Large Language Models (LLMs) Program |
 | Organization     | [**Edrak for Ai**](https://edrak4ai.com/en)                         |
@@ -101,10 +101,11 @@ pnpm install
 3. Configure environment variables:
 Create `.env.local` file:
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-HF_TOKEN=your_huggingface_token
+NEXT_PUBLIC_SUPABASE_URL=https://nrbwgqxilnivkakmktra.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_1wGfBcZSp62s9ySD6XEoTw_721v3QT6
+HF_TOKEN=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
 NEXT_PUBLIC_FASTAPI_URL=http://localhost:8000
+NEXT_PUBLIC_FASTAPI_DOCS_URL=http://127.0.0.1:8001/docs
 ```
 
 4. Run the development server:
@@ -136,14 +137,16 @@ pip install -r requirements.txt
 4. Configure environment variables:
 Create `.env` file in the backend directory:
 ```env
-SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_anon_key
-HF_TOKEN=your_huggingface_token
+SUPABASE_URL=https://nrbwgqxilnivkakmktra.supabase.co
+SUPABASE_ANON_KEY=sb_publishable_1wGfBcZSp62s9ySD6XEoTw_721v3QT6
+HF_TOKEN=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
+
 ```
 
 5. Run the backend server:
 ```bash
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8001
+http://127.0.0.1:8001/health
 ```
 
 The backend API will be available at `http://localhost:8000`
@@ -175,6 +178,7 @@ The system automatically extracts key information from uploaded documents:
 - **Transcript**: University, degree, major, GPA, graduation year
 - **IELTS**: Overall score, section scores, test date, expiry date
 - **Recommendation Letters**: Referee details, strengths mentioned
+- **SOP (Statement of Purpose)**: Academic interests, career goals, research experience, motivation for the program
 
 ### AI Chat
 The chatbot provides personalized assistance by:
@@ -251,11 +255,11 @@ Real-time chat interface for asking questions about the application.
 
 # 📚 About the Challenge
 
-This project was developed as part of the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
+This project was developed as part of the [**Tips Hindawi**](https://tipshindawi.com/) **Challenge (June–July) 2026**.
 
 [Tips Hindawi](https://www.tipshindawi.com/) is the internships department of [**Edrak for Ai**](https://edrak4ai.com/en), and the challenge encourages participants to build real-world projects, apply practical skills, and showcase their work through GitHub.
 
-For more information about the challenge, training programs, and upcoming batches, visit the official [Tips Hindawi](https://www.tipshindawi.com/) website.
+For more information about the challenge, training programs, and upcoming batches, visit the official [Tips Hindawi](https://tipshindawi.com/) website.
 
 ---
 
