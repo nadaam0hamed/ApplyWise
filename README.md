@@ -1,7 +1,5 @@
 # 🚀 ApplyWise - AI-Powered Scholarship Application Analyzer
 
-[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-Coming_Soon-yellow?style=for-the-badge)](#-live-demo)
-
 > 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
 
 ## 👤 Participant
