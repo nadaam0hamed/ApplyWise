@@ -15,17 +15,6 @@ export async function createServerSupabaseClient(): Promise<SupabaseClient> {
   const { url, anonKey } = getSupabaseEnv();
   const cookieStore = await cookies();
 
-  // Skip Supabase client creation if env vars are not set (during build)
-  if (!url || !anonKey) {
-    // Return a mock client for build time
-    return createClient('https://placeholder.supabase.co', 'placeholder-key', {
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false,
-      },
-    });
-  }
-
   return createServerClient(url, anonKey, {
     cookies: {
       getAll() {
@@ -50,18 +39,6 @@ export async function createServerSupabaseClient(): Promise<SupabaseClient> {
  */
 export function createServiceSupabaseClient(): SupabaseClient {
   const { url, serviceKey } = getSupabaseServiceEnv();
-
-  // Skip Supabase client creation if env vars are not set (during build)
-  if (!url || !serviceKey) {
-    // Return a mock client for build time
-    return createClient('https://placeholder.supabase.co', 'placeholder-key', {
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false,
-      },
-    });
-  }
-
   return createClient(url, serviceKey, {
     auth: {
       autoRefreshToken: false,
