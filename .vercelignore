@@ -1,0 +1,9 @@
+# Backend files
+backend/
+.vscode/
+.git/
+.next/
+node_modules/
+.env.local
+.env
+*.log

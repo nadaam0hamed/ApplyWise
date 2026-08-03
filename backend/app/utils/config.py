@@ -22,7 +22,7 @@ class Settings(BaseModel):
     host: str = Field(default="0.0.0.0")
     port: int = Field(default=8000)
 
-    cors_origins: str = Field(default="http://localhost:3000")
+    cors_origins: str = Field(default="http://localhost:3000,https://applywise.vercel.app")
 
     # OpenAI (future)
     openai_api_key: str | None = Field(default=None)
@@ -75,7 +75,7 @@ def _load_settings() -> Settings:
         debug=_env_bool("DEBUG", True),
         host=os.getenv("HOST", "0.0.0.0"),
         port=int(os.getenv("PORT", "8000")),
-        cors_origins=os.getenv("CORS_ORIGINS", "http://localhost:3000"),
+        cors_origins=os.getenv("CORS_ORIGINS", "http://localhost:3000,https://applywise.vercel.app"),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         openai_model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
         supabase_url=os.getenv("SUPABASE_URL"),
