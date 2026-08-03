@@ -2,7 +2,11 @@
 
 [![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-Run_Locally-success?style=for-the-badge)](#-live-demo)
 
+<<<<<<< HEAD
 > 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
+=======
+> 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com) **Challenge (June–July) 2026**.
+>>>>>>> 900c677ece7685441eb14311c1ccc675494a9a0c
 
 ## 👤 Participant
 
@@ -337,11 +341,11 @@ Real-time chat interface for asking questions about the application.
 
 # 📚 About the Challenge
 
-This project was developed as part of the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
+This project was developed as part of the [**Tips Hindawi**](https://www.tipshindawi.com) **Challenge (June–July) 2026**.
 
-[Tips Hindawi](https://www.tipshindawi.com/) is the internships department of [**Edrak for Ai**](https://edrak4ai.com/en), and the challenge encourages participants to build real-world projects, apply practical skills, and showcase their work through GitHub.
+[Tips Hindawi](https://www.tipshindawi.com) is the internships department of [**Edrak for Ai**](https://edrak4ai.com/en), and the challenge encourages participants to build real-world projects, apply practical skills, and showcase their work through GitHub.
 
-For more information about the challenge, training programs, and upcoming batches, visit the official [Tips Hindawi](https://www.tipshindawi.com/) website.
+For more information about the challenge, training programs, and upcoming batches, visit the official [Tips Hindawi](https://www.tipshindawi.com) website.
 
 ---
 
