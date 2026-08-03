@@ -1,6 +1,6 @@
 # 🚀 ApplyWise - AI-Powered Scholarship Application Analyzer
 
-[![Live Demo](https://applywise-4s8lp87ff-nadaam0hamed1111-4083s-projects.vercel.app/)](#-live-demo)
+(https://applywise-4s8lp87ff-nadaam0hamed1111-4083s-projects.vercel.app/) 
 
 > 🏆 This repository is my official submission for the [**Tips Hindawi**](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
 
