@@ -46,8 +46,8 @@ export default function DashboardPage() {
           <div className="max-w-7xl mx-auto space-y-8">
             {/* Welcome */}
             <div className="premium-card card-animate-in overflow-hidden">
-              <div className="p-8 space-y-4">
-                <h1 className="text-4xl font-bold text-foreground">
+              <div className="p-6 sm:p-8 space-y-4">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
                   Welcome back, {displayName}! 👋
                 </h1>
                 <div className="animated-gradient-line" />
@@ -78,13 +78,13 @@ export default function DashboardPage() {
               </div>
             ) : !hasApplications ? (
               /* Empty state — no readiness, documents, analysis, or timeline */
-              <div className="premium-card p-16 card-animate-in text-center space-y-6">
-                <div className="mx-auto w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center">
-                  <FileUp className="text-secondary" size={36} />
+              <div className="premium-card p-8 sm:p-12 md:p-16 card-animate-in text-center space-y-6">
+                <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <FileUp className="text-secondary" size={28} sm:size={36} />
                 </div>
                 <div className="space-y-2">
-                  <h2 className="text-2xl font-bold text-foreground">No applications yet</h2>
-                  <p className="text-muted-foreground max-w-md mx-auto">
+                  <h2 className="text-xl sm:text-2xl font-bold text-foreground">No applications yet</h2>
+                  <p className="text-muted-foreground max-w-md mx-auto text-sm sm:text-base">
                     Start your first application to track scholarships, university admissions,
                     visas, and more — all in one place.
                   </p>
@@ -92,28 +92,29 @@ export default function DashboardPage() {
                 <button
                   type="button"
                   onClick={goToStartApplication}
-                  className="relative z-10 inline-flex items-center gap-3 px-10 py-4 btn-gradient-primary text-background rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all cursor-pointer pointer-events-auto"
+                  className="relative z-10 inline-flex items-center gap-3 px-8 py-3 sm:px-10 sm:py-4 btn-gradient-primary text-background rounded-xl font-semibold text-base sm:text-lg hover:shadow-lg hover:shadow-primary/30 transition-all cursor-pointer pointer-events-auto"
                 >
-                  <Plus size={22} />
+                  <Plus size={18} sm:size={22} />
                   Create Application
                 </button>
               </div>
             ) : (
               /* Applications list — real Supabase data only */
               <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-bold text-foreground">Your Applications</h2>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <h2 className="text-lg sm:text-xl font-bold text-foreground">Your Applications</h2>
                   <button
                     type="button"
                     onClick={goToStartApplication}
-                    className="relative z-10 inline-flex items-center gap-2 px-5 py-2.5 btn-gradient-primary text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/30 transition-all text-sm cursor-pointer pointer-events-auto"
+                    className="relative z-10 inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 btn-gradient-primary text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/30 transition-all text-sm cursor-pointer pointer-events-auto"
                   >
-                    <Plus size={18} />
-                    Create Application
+                    <Plus size={16} sm:size={18} />
+                    <span className="hidden sm:inline">Create Application</span>
+                    <span className="sm:hidden">Create</span>
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {applications.map((app, index) => {
                     const typeIcon = APPLICATION_TYPE_ICONS[app.application_type]
                     const typeLabel = APPLICATION_TYPE_LABELS[app.application_type]
@@ -124,20 +125,20 @@ export default function DashboardPage() {
                         key={app.id}
                         type="button"
                         onClick={() => router.push(`/applications/${app.id}`)}
-                        className="premium-card p-6 card-animate-in space-y-4 text-left w-full hover:border-secondary/30 transition-all cursor-pointer"
+                        className="premium-card p-4 sm:p-6 card-animate-in space-y-3 sm:space-y-4 text-left w-full hover:border-secondary/30 transition-all cursor-pointer"
                         style={{ animationDelay: `${index * 0.05}s` }}
                       >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex items-center gap-3 min-w-0">
-                            <span className="text-2xl flex-shrink-0">{typeIcon}</span>
+                        <div className="flex items-start justify-between gap-2 sm:gap-3">
+                          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                            <span className="text-xl sm:text-2xl flex-shrink-0">{typeIcon}</span>
                             <div className="min-w-0">
-                              <h3 className="font-semibold text-foreground truncate">
+                              <h3 className="font-semibold text-foreground truncate text-sm sm:text-base">
                                 {getApplicationDisplayName(app)}
                               </h3>
-                              <p className="text-xs text-muted-foreground">{typeLabel}</p>
+                              <p className="text-[10px] sm:text-xs text-muted-foreground">{typeLabel}</p>
                             </div>
                           </div>
-                          <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-secondary/20 text-secondary flex-shrink-0">
+                          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium bg-secondary/20 text-secondary flex-shrink-0">
                             {statusLabel}
                           </span>
                         </div>

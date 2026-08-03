@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -15,7 +15,7 @@ function getSafeRedirectPath(value: string | null): string {
   return value;
 }
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirectTo = getSafeRedirectPath(searchParams.get('redirectTo'));
@@ -61,14 +61,14 @@ export default function LoginPage() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background to-background">
-        <div className="w-full max-w-md space-y-8">
+      <div className="min-h-screen flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background to-background">
+        <div className="w-full max-w-md space-y-6 sm:space-y-8">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
-            <p className="text-muted-foreground">Sign in to your ApplyWise account</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">Sign in to your ApplyWise account</p>
           </div>
 
-          <form onSubmit={handleLogin} className="glassmorphism rounded-xl p-8 space-y-6">
+          <form onSubmit={handleLogin} className="glassmorphism rounded-xl p-6 sm:p-8 space-y-4 sm:space-y-6">
             {error && (
               <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
                 <p className="text-sm text-red-400">{error}</p>
@@ -123,5 +123,13 @@ export default function LoginPage() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <LoginContent />
+    </Suspense>
   );
 }

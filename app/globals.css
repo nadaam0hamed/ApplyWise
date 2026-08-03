@@ -170,32 +170,53 @@
     background-position: center;
     background-attachment: fixed;
   }
-  
+
+  @media (max-width: 768px) {
+    .hero-background {
+      background-attachment: scroll;
+    }
+  }
+
   .hero-overlay {
     background: linear-gradient(135deg, rgba(6, 24, 38, 0.5) 0%, rgba(11, 17, 32, 0.6) 100%);
   }
-  
+
   .gradient-emerald-cyan {
     background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%);
   }
-  
+
   .btn-gradient-primary {
     background: linear-gradient(135deg, #0F766E 0%, #F6C453 100%);
   }
-  
+
   .glassmorphism {
     background: rgba(11, 17, 32, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(20, 184, 166, 0.2);
   }
-  
+
   .glow-emerald {
     box-shadow: 0 0 30px rgba(15, 118, 110, 0.3), 0 0 60px rgba(20, 184, 166, 0.2);
   }
-  
+
   .gradient-text-emerald {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-cyan-400;
+  }
+
+  /* Mobile responsive utilities */
+  @media (max-width: 768px) {
+    .mobile-section-padding {
+      @apply px-4 py-8;
+    }
+
+    .mobile-text-responsive {
+      @apply text-sm sm:text-base;
+    }
+
+    .mobile-card-responsive {
+      @apply p-4 sm:p-6;
+    }
   }
 
   /* Premium Dashboard Background */

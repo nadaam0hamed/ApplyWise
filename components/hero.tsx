@@ -122,7 +122,7 @@ export function Hero() {
 
               {/* Main Headline */}
               <div className="space-y-4">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
                   <span className="text-white block">Your Journey.</span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-cyan-400 to-emerald-400 mt-2">
                     Our Intelligence.
@@ -132,8 +132,8 @@ export function Hero() {
 
               {/* Tagline */}
               <div className="space-y-4">
-                <p className="text-xl font-semibold text-secondary">Apply Smarter. Stress Less.</p>
-                <p className="text-lg leading-relaxed text-muted-foreground max-w-xl">
+                <p className="text-lg sm:text-xl font-semibold text-secondary">Apply Smarter. Stress Less.</p>
+                <p className="text-base sm:text-lg leading-relaxed text-muted-foreground max-w-xl">
                   Upload your documents, let AI analyze your application, identify what's missing, build your timeline, and answer your questions instantly.
                 </p>
               </div>
@@ -156,9 +156,9 @@ export function Hero() {
 
             {/* Right: Premium Dashboard Mockup — authenticated users only */}
             {showDashboardPreview && (
-              <div className="relative hidden lg:block h-[600px]">
+              <div className="relative hidden md:block lg:block h-[500px] md:h-[600px]">
                 {/* Main Dashboard Card - Glassmorphism */}
-                <div className="absolute inset-0 glassmorphism rounded-2xl p-6 overflow-hidden glow-emerald">
+                <div className="absolute inset-0 glassmorphism rounded-2xl p-4 md:p-6 overflow-hidden glow-emerald">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">

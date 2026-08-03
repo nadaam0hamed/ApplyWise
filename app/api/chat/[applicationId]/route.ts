@@ -3,6 +3,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { handleChatMessage, listChatMessages } from '@/lib/chat-server';
 import { createServerSupabaseClient } from '@/lib/serverSupabase';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 type RouteContext = {
   params: Promise<{ applicationId: string }>;
 };

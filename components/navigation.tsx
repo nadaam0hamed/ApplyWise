@@ -44,7 +44,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 flex items-center justify-center">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
               <img
                 src="/applywise-logo.png"
                 alt="ApplyWise Logo"
@@ -52,14 +52,14 @@ export function Navigation() {
               />
             </div>
             <div>
-              <span className="font-bold text-lg text-foreground">
+              <span className="font-bold text-base sm:text-lg text-foreground">
                 Apply<span className="text-primary">Wise</span>
               </span>
-              <p className="text-xs text-muted-foreground">Apply Smarter. Stress Less.</p>
+              <p className="text-[10px] sm:text-xs text-muted-foreground hidden sm:block">Apply Smarter. Stress Less.</p>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -71,31 +71,31 @@ export function Navigation() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3 lg:gap-4">
             {loading ? (
               <span className="text-sm text-muted-foreground">Loading...</span>
             ) : user ? (
               <>
-                <span className="text-sm text-muted-foreground">{userName}</span>
+                <span className="text-sm text-muted-foreground hidden lg:block">{userName}</span>
                 <button
                   onClick={handleLogout}
-                  className="px-6 py-2 text-sm font-medium text-foreground border border-primary/30 hover:border-primary rounded-lg transition-colors flex items-center gap-2"
+                  className="px-4 lg:px-6 py-2 text-sm font-medium text-foreground border border-primary/30 hover:border-primary rounded-lg transition-colors flex items-center gap-2"
                 >
                   <LogOut size={16} />
-                  Logout
+                  <span className="hidden lg:inline">Logout</span>
                 </button>
               </>
             ) : (
               <>
                 <button
                   onClick={handleSignIn}
-                  className="px-6 py-2 text-sm font-medium text-foreground border border-primary/30 hover:border-primary rounded-lg transition-colors"
+                  className="px-4 lg:px-6 py-2 text-sm font-medium text-foreground border border-primary/30 hover:border-primary rounded-lg transition-colors"
                 >
                   Sign In
                 </button>
                 <button
                   onClick={handleGetStarted}
-                  className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-background rounded-lg font-medium hover:shadow-lg hover:shadow-primary/20 transition-all"
+                  className="px-4 lg:px-6 py-2 bg-gradient-to-r from-primary to-secondary text-background rounded-lg font-medium hover:shadow-lg hover:shadow-primary/20 transition-all"
                 >
                   Get Started
                 </button>
@@ -104,7 +104,7 @@ export function Navigation() {
           </div>
 
           <button
-            className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
+            className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors touch-manipulation"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -113,27 +113,27 @@ export function Navigation() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border animate-in slide-in-from-top duration-200">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2 touch-manipulation"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 pt-4">
+              <div className="flex flex-col gap-3 pt-4 border-t border-border/50">
                 {loading ? (
-                  <p className="text-xs text-muted-foreground">Loading...</p>
+                  <p className="text-sm text-muted-foreground">Loading...</p>
                 ) : user ? (
                   <>
-                    <p className="text-xs text-muted-foreground">Welcome, {userName}</p>
+                    <p className="text-sm text-muted-foreground">Welcome, {userName}</p>
                     <button
                       onClick={handleLogout}
-                      className="px-4 py-2 text-sm font-medium text-foreground border border-border rounded-lg flex items-center justify-center gap-2"
+                      className="px-4 py-3 text-sm font-medium text-foreground border border-border rounded-lg flex items-center justify-center gap-2 touch-manipulation"
                     >
                       <LogOut size={16} />
                       Logout
@@ -146,7 +146,7 @@ export function Navigation() {
                         handleSignIn();
                         setIsOpen(false);
                       }}
-                      className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors border border-border rounded-lg"
+                      className="px-4 py-3 text-sm font-medium text-foreground hover:text-primary transition-colors border border-border rounded-lg touch-manipulation"
                     >
                       Sign In
                     </button>
@@ -155,7 +155,7 @@ export function Navigation() {
                         handleGetStarted();
                         setIsOpen(false);
                       }}
-                      className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-background rounded-lg font-medium"
+                      className="px-4 py-3 bg-gradient-to-r from-primary to-secondary text-background rounded-lg font-medium touch-manipulation"
                     >
                       Get Started
                     </button>

@@ -9,6 +9,11 @@ export async function updateSession(request: NextRequest) {
 
   const { url, anonKey } = getSupabaseEnv();
 
+  // Skip auth checks if env vars are not set (during build or dev)
+  if (!url || !anonKey) {
+    return supabaseResponse;
+  }
+
   const supabase: SupabaseClient = createServerClient(url, anonKey, {
     cookies: {
       getAll() {
