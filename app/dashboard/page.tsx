@@ -80,7 +80,7 @@ export default function DashboardPage() {
               /* Empty state — no readiness, documents, analysis, or timeline */
               <div className="premium-card p-8 sm:p-12 md:p-16 card-animate-in text-center space-y-6">
                 <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-secondary/10 flex items-center justify-center">
-                  <FileUp className="text-secondary" size={28} sm:size={36} />
+                  <FileUp className="text-secondary w-7 h-7 sm:w-9 sm:h-9" />
                 </div>
                 <div className="space-y-2">
                   <h2 className="text-xl sm:text-2xl font-bold text-foreground">No applications yet</h2>
@@ -94,7 +94,7 @@ export default function DashboardPage() {
                   onClick={goToStartApplication}
                   className="relative z-10 inline-flex items-center gap-3 px-8 py-3 sm:px-10 sm:py-4 btn-gradient-primary text-background rounded-xl font-semibold text-base sm:text-lg hover:shadow-lg hover:shadow-primary/30 transition-all cursor-pointer pointer-events-auto"
                 >
-                  <Plus size={18} sm:size={22} />
+                  <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
                   Create Application
                 </button>
               </div>
@@ -108,7 +108,7 @@ export default function DashboardPage() {
                     onClick={goToStartApplication}
                     className="relative z-10 inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 btn-gradient-primary text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/30 transition-all text-sm cursor-pointer pointer-events-auto"
                   >
-                    <Plus size={16} sm:size={18} />
+                    <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span className="hidden sm:inline">Create Application</span>
                     <span className="sm:hidden">Create</span>
                   </button>
