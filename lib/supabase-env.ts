@@ -7,13 +7,12 @@ export function getSupabaseEnv(): { url: string; anonKey: string } {
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   // Allow missing env vars during build time for static pages
-  if (process.env.NODE_ENV === 'production' && !url && !anonKey) {
-    throw new Error(
-      'Missing Supabase environment variables. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.',
-    );
+  if (!url || !anonKey) {
+    // Return empty strings during build time
+    return { url: url || '', anonKey: anonKey || '' };
   }
 
-  return { url: url || '', anonKey: anonKey || '' };
+  return { url, anonKey };
 }
 
 export function getSupabaseServiceEnv(): { url: string; serviceKey: string } {
@@ -21,11 +20,10 @@ export function getSupabaseServiceEnv(): { url: string; serviceKey: string } {
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   // Allow missing env vars during build time for static pages
-  if (process.env.NODE_ENV === 'production' && !url && !serviceKey) {
-    throw new Error(
-      'Missing Supabase service role environment variables. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.',
-    );
+  if (!url || !serviceKey) {
+    // Return empty strings during build time
+    return { url: url || '', serviceKey: serviceKey || '' };
   }
 
-  return { url: url || '', serviceKey: serviceKey || '' };
+  return { url, serviceKey };
 }
