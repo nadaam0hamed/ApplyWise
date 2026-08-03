@@ -17,6 +17,11 @@ export async function GET(request: Request) {
     const cookieStore = await cookies();
     const { url, anonKey } = getSupabaseEnv();
 
+    // Skip auth if env vars are not set (during build)
+    if (!url || !anonKey) {
+      return NextResponse.redirect(`${origin}/login`);
+    }
+
     const supabase = createServerClient(url, anonKey, {
       cookies: {
         getAll() {
